@@ -114,7 +114,9 @@
 			this.viewerTitle            = titleData._data.title;
 		},
 		stylize : function() {
-			$('.reader-page-bar').remove();
+			if(!config.options.disable_viewer){
+				$('.reader-page-bar').remove();
+			}
 		},
 		preSetupViewer : function(callback) {
 			$('.reader-images').replaceWith($('<div/>', {id: 'viewer'}));
